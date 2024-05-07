@@ -8,26 +8,38 @@ var recent_orders = {
 	init: () => {},
 	onPageBeforeDestroy: () => {},
 };
+
+var routes = {
+	login: {
+		page: "login",
+		val: login,
+	},
+	home: {
+		page: "home",
+		val: home,
+	},
+	"recent-orders": {
+		page: "recent-orders",
+		val: recent_orders,
+	},
+};
+
 export var config = {
 	defaultPage: "login",
-	routes: {
-		login: {
-			page: "login",
-			val: login,
-		},
-		home: {
-			page: "home",
-			val: home,
-		},
-		"recent-orders": {
-			page: "recent-orders",
-			val: recent_orders,
-		},
-	},
+	routes: routes,
 	menutree: menutree,
 	const: {},
 	api: {},
 	storeKey: "app-csr-v.0.0.1",
+};
+
+export var menutree = {
+	home: {
+		id: "0",
+	},
+	recent_orders: {
+		id: "0_1",
+	},
 };
 
 export var oL = {
@@ -127,14 +139,5 @@ export var storageService = {
 			}
 
 			return atob(p_sValue); */
-	},
-};
-
-export var menutree = {
-	home: {
-		id: "0",
-	},
-	recent_orders: {
-		id: "0_1",
 	},
 };
