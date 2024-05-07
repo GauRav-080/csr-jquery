@@ -4,8 +4,8 @@
 	"description": "csr",
 	"main": "index.js",
 	"scripts": {
-		"dev": "npx tailwindcss -i ./css/main.css -o ./build/app.css --watch",
-		"build": "npx tailwindcss -i ./css/main.css -o ./build/app.css"
+		"dev": "npx tailwindcss -i ./css/main.css -o ./css/app.css --watch",
+		"build": "npx tailwindcss -i ./css/main.css -o ./css/app.css"
 	},
 	"author": "",
 	"license": "ISC",
