@@ -1,15 +1,15 @@
 {
-  "name": "csr-jquery",
-  "version": "1.0.0",
-  "description": "csr",
-  "main": "index.js",
-  "scripts": {
-    "dev": "npx tailwindcss -i ./css/main.css -o ./build/app.css --watch",
-    "build": "npx tailwindcss -i ./css/main.css -o ./build/style.css"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.4.3"
-  }
+	"name": "csr-jquery",
+	"version": "1.0.0",
+	"description": "csr",
+	"main": "index.js",
+	"scripts": {
+		"dev": "npx tailwindcss -i ./css/main.css -o ./build/app.css --watch",
+		"build": "npx tailwindcss -i ./css/main.css -o ./build/app.css"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"tailwindcss": "^3.4.3"
+	}
 }
