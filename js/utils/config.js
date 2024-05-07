@@ -1,12 +1,9 @@
 import { login } from "../pages/login.js";
+import { recent_orders } from "../pages/recent-order.js";
 
 var home = {
-	init: () => {},
-	onPageBeforeDestroy: () => {},
-};
-var recent_orders = {
-	init: () => {},
-	onPageBeforeDestroy: () => {},
+	init: () => { },
+	onPageBeforeDestroy: () => { },
 };
 
 var routes = {
@@ -24,6 +21,10 @@ var routes = {
 	},
 };
 
+// var recent_orders = {
+// 	init: () => { },
+// 	onPageBeforeDestroy: () => { },
+// };
 export var config = {
 	defaultPage: "login",
 	routes: routes,
