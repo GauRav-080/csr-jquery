@@ -6,11 +6,14 @@ module.exports = {
 			sans: ["Roboto", "sans-serif"],
 		},
 		extend: {
+			screens: {
+				"3xl": "1600px",
+			},
 			colors: {
-				"cblue": "#23aaea",
+				cblue: "#23aaea",
 				"cdark-blue": "#2a58ad",
 				"cdarker-blue": "#1d4c9e",
-				"cgreen": "#68b833",
+				cgreen: "#68b833",
 				"cbg-gray": "#edf2f6",
 				"ctext-gray": "#707070",
 				"chead-black": "#212121",
