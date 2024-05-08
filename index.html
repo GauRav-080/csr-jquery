@@ -1,65 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.datatables.net/2.0.6/css/dataTables.dataTables.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
-			integrity="sha256-zaSoHBhwFdle0scfGEFUCwggPN7F+ip9XRglo8IWb4w="
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/themes/base/tabs.min.css"
-		/>
 
-		<link href="./css/app.css" rel="stylesheet" />
-		<title>CSR</title>
-	</head>
-	<body>
-		<div class="max-w-screen-2xl h-screen mx-auto">
-			<div id="page-content" class="">
-				<!-- Load pages here -->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/2.0.6/css/dataTables.dataTables.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+		integrity="sha256-zaSoHBhwFdle0scfGEFUCwggPN7F+ip9XRglo8IWb4w=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/themes/base/tabs.min.css" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<link href="./css/app.css" rel="stylesheet" />
+	<link href="./css/recent-order.css" rel="stylesheet" />
+	<title>CSR</title>
+</head>
+
+<body>
+	<div class="max-w-screen-2xl h-screen mx-auto">
+		<div id="page-content" class="">
+			<!-- Load pages here -->
+		</div>
+	</div>
+
+	<div id="page-structures" class="hidden">
+		<!-- login page -->
+		<div id="login-page">login page</div>
+		<!-- home page -->
+		<div id="home-page">home page</div>
+		<!-- recent orders -->
+		<div id="recent-orders-page">
+			<div class='bg-gray-100 overflow-auto h-full'>
+				<div class='bg-white h-13 border-white m-0 p-1'>
+					<h3 class="text-xl font-normal m-3 text-cblue">
+						Recent Orders
+					</h3>
+				</div>
+				<div id="accordion">
+					<h3 class="accordion-icon">Search Grid</h3>
+
+					<div class='input-section'>
+
+						<div class=' flex flex-row justify-start mt-1 mb-8'>
+
+
+							<div class='flex flex-col mx-1 w-60'>
+								<label class="text-label">From:</label>
+								<input type="text" id="order_toDate" placeholder="MM/DD/YYYY" class=" ms_date_text"
+									autocomplete="off" />
+
+							</div>
+							<div class='flex flex-col mx-1 w-60 '>
+								<label class="text-label">To:</label>
+								<input type="text" id="order_endDate" placeholder="MM/DD/YYYY" class="ms_date_text"
+									autocomplete="off" />
+
+							</div>
+
+						</div>
+
+						<div class='flex flex-row justify-around'>
+							<div class='flex flex-col mx-1 w-full'>
+								<label class="text-label">Select Type:</label>
+								<select id="recent-order-type" class="ssssss">
+
+
+								</select>
+							</div>
+							<div class='flex flex-col mx-1 w-full'>
+								<label class="text-label">Select Gate:</label>
+								<select id="recent-order-gate" class=" ">
+
+								</select>
+
+
+							</div>
+
+							<div class='flex flex-col mx-1 w-full'>
+								<label class="text-label">Select Submission Type:</label>
+								<select id="recent-order-submission-type" class=" ">
+
+								</select>
+							</div>
+							<div class='flex flex-col mx-1 w-full'>
+								<label class="text-label">Select Production Type:</label>
+								<select id="recent-order-production-type" class=" ">
+
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr class='m-4 border border-gray-300 '>
+				</hr>
+				<div>
+					<table id="dataTables" class="tableclass">
+						<thead class="table-heading">
+							<tr>
+								<th>Date</th>
+								<th>Order</th>
+								<th>Publisher </th>
+								<th>Customer</th>
+								<th>Method</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody class="table-body">
+							<tr>
+								<td>04/25/23</td>
+								<td>1256836</td>
+								<td>UAT-TNQ Jmls</td>
+								<td>281295</td>
+								<td>POD</td>
+								<td>Completed</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>1556836</td>
+								<td>PROD TEST A1</td>
+								<td>980295</td>
+								<td>POD</td>
+								<td>In Process</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>1956836</td>
+								<td>UAT-TNQ Jmls</td>
+								<td>981295</td>
+								<td>POD</td>
+								<td>In Process</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>1156836</td>
+								<td>UAT-TNQ Books</td>
+								<td>980295</td>
+								<td>POD</td>
+								<td>In Process</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>3656836</td>
+								<td>UAT-TNQ Jmls</td>
+								<td>981295</td>
+								<td>POD</td>
+								<td>In Process</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>2156836</td>
+								<td>PROD TEST A1</td>
+								<td>988905</td>
+								<td>POD</td>
+								<td>Completed</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>0456836</td>
+								<td>UAT-TNQ Jmls</td>
+								<td>981295</td>
+								<td>POD</td>
+								<td>In Process</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>9156836</td>
+								<td>UAT-TNQ Jmls</td>
+								<td>902345</td>
+								<td>POD</td>
+								<td>In Process</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>7156836</td>
+								<td>UAT-TNQ Journal</td>
+								<td>181295</td>
+								<td>POD</td>
+								<td>In Process</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>3056836</td>
+								<td>PROD TEST A2</td>
+								<td>981295</td>
+								<td>POD</td>
+								<td>Completed</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>1156836</td>
+								<td>UAT-TNQ Books</td>
+								<td>981295</td>
+								<td>POD</td>
+								<td>In Process</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>9556836</td>
+								<td>PROD TEST A1</td>
+								<td>081295</td>
+								<td>POD</td>
+								<td>In Process</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>0156836</td>
+								<td>UAT-TNQ Books</td>
+								<td>981295</td>
+								<td>POD</td>
+								<td>Completed</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>8556836</td>
+								<td>UAT-TNQ Jmls</td>
+								<td>201295</td>
+								<td>POD</td>
+								<td>Completed</td>
+							</tr>
+							<tr>
+								<td>04/25/23</td>
+								<td>1156836</td>
+								<td>PROD TEST A5</td>
+								<td>981295</td>
+								<td>POD</td>
+								<td>Completed</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
+
 		</div>
+	</div>
 
-		<div id="page-structures" class="hidden">
-			<!-- login page -->
-			<div id="login-page">login page</div>
-			<!-- home page -->
-			<div id="home-page">home page</div>
-			<!-- recent orders -->
-			<div id="recent-orders-page">order page</div>
-		</div>
+	<script src="js/lib/jquery-3.7.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/datatables.net@2.0.6/js/dataTables.min.js"
+		integrity="sha256-8ODK/e90HB+c5xOpglHIiTwP0PdDp79mogAMWIYLud4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"
+		integrity="sha256-9yRP/2EFlblE92vzCA10469Ctd0jT48HnmmMw5rJZrA=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/dist/jquery-ui.min.js"
+		integrity="sha256-sw0iNNXmOJbQhYFuC9OF2kOlD5KQKe1y5lfBn4C9Sjg=" crossorigin="anonymous"></script>
 
-		<script src="js/lib/jquery-3.7.1.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/datatables.net@2.0.6/js/dataTables.min.js"
-			integrity="sha256-8ODK/e90HB+c5xOpglHIiTwP0PdDp79mogAMWIYLud4="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"
-			integrity="sha256-9yRP/2EFlblE92vzCA10469Ctd0jT48HnmmMw5rJZrA="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/dist/jquery-ui.min.js"
-			integrity="sha256-sw0iNNXmOJbQhYFuC9OF2kOlD5KQKe1y5lfBn4C9Sjg="
-			crossorigin="anonymous"
-		></script>
 
-		<script type="module" src="js/app.js"></script>
-	</body>
+
+	<script type="module" src="js/app.js"></script>
+</body>
+
 </html>
