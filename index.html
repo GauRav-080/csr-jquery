@@ -27,12 +27,15 @@
 			rel="stylesheet"
 			href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css"
 		/>
-
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+		/>
 		<link href="./css/app.css" rel="stylesheet" />
 		<title>CSR</title>
 	</head>
 	<body class="bg-gray-200">
-		<div class="bg-white max-w-screen-3xl h-screen mx-auto">
+		<div class="bg-white max-w-screen-3xl mx-auto">
 			<header
 				class="bg-inherit sticky top-0 z-40 border-b-2 flex flex-row justify-center items-center px-5 py-2"
 			>
@@ -56,25 +59,104 @@
 				</div>
 			</header>
 			<div id="main" class="flex flex-row">
-				<div class="bg-cdark-blue z-20 overflow-y-auto">
-					<nav id="sidebar">
-						<ul>
-							<li>Home</li>
-							<li>Home</li>
-							<li>Home</li>
-							<li>Home</li>
-							<li>Home</li>
+				<div
+					id="sidebar"
+					class="fixed z-10 bg-cdark-blue h-full overflow-auto pb-24"
+				>
+					<nav>
+						<ul class="text-white font-medium text-sm">
+							<li>
+								<a href="#/home">
+									<span class="material-symbols-outlined"> home </span>
+									<h3>Home</h3>
+								</a>
+							</li>
+
+							<li>
+								<a href="">
+									<span class="material-symbols-outlined"> notifications </span>
+									<h3>Notifications</h3>
+								</a>
+							</li>
+							<li>
+								<a>
+									<span class="material-symbols-outlined"> assignment </span>
+									<h3 class="flex flex-row">
+										Orders
+										<span class="material-symbols-outlined ml-auto">
+											expand_less
+										</span>
+									</h3>
+								</a>
+								<ul id="sub-orders" class="text-gray-300">
+									<li>
+										<a href="#/recent-orders">
+											<h3>Recent Orders</h3>
+										</a>
+										<a>
+											<h3>On Wait Orders</h3>
+										</a>
+										<a>
+											<h3>Failed Orders</h3>
+										</a>
+										<a>
+											<h3>In Process Orders</h3>
+										</a>
+										<a>
+											<h3>Search Orders</h3>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="">
+									<span class="material-symbols-outlined">
+										manage_accounts
+									</span>
+									<h3>Service Management</h3>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="material-symbols-outlined"> deployed_code </span>
+									<h3>Products</h3>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="material-symbols-outlined"> hub </span>
+									<h3>Distributions</h3>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="material-symbols-outlined"> receipt_long </span>
+									<h3>Transactions</h3>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="material-symbols-outlined"> description </span>
+									<h3>SDS</h3>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<span class="material-symbols-outlined"> build </span>
+									<h3>Admin Tools</h3>
+								</a>
+							</li>
 						</ul>
 					</nav>
 				</div>
 
-				<div id="page-content" class="">
+				<div id="page-content" class="w-full pl-52">
 					<!-- Load pages here -->
 				</div>
 			</div>
 
 			<footer
-				class="fixed bottom-0 bg-inherit border-t-2 w-full max-w-screen-3xl text-center py-1 text-xs text-gray-400"
+				class="fixed z-40 bottom-0 bg-inherit border-t-2 w-full max-w-screen-3xl text-center py-1 text-xs text-gray-400"
 			>
 				Copyright &copy; Sheridan Digital Express. All right reserved.
 			</footer>
