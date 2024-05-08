@@ -13,9 +13,7 @@
 		integrity="sha256-zaSoHBhwFdle0scfGEFUCwggPN7F+ip9XRglo8IWb4w=" crossorigin="anonymous" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/themes/base/tabs.min.css" />
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="/resources/demos/style.css">
 	<link href="./css/app.css" rel="stylesheet" />
-	<link href="./css/recent-order.css" rel="stylesheet" />
 	<title>CSR</title>
 </head>
 
@@ -28,7 +26,62 @@
 
 	<div id="page-structures" class="hidden">
 		<!-- login page -->
-		<div id="login-page">login page</div>
+		<div id="login-page">
+			<div class="bg-cover bg-center h-screen flex justify-center items-center" 
+			style="background-image: url('../assets/images/login-background.png');">
+			<div class="left-side w-1/2 p-2 flex flex-col">
+				<h2 class="flex-1 px-5 text-5xl text-white font-thin mb-0">SHERIDAN GLOBAL GATEWAY SYSTEM -</h2>
+				<p class="px-5 text-5xl text-white font-medium mt-0">CSR INTERFACE</p>
+			  </div>
+			  <div class="flex-1 w-1/2 p-2 flex flex-col">
+				<div class="sign-in p-5 bg-white h-screen mr-16 flex flex-col justify-center" >
+				  <div class="logo flex flex-col items-center">
+					<img className='img-logo' src='../assets/images/header-logo.png' />
+					<h2 class="text-gray-600 font-normal">Sign In</h2>
+				  </div>
+		
+				  <div class="input-handle flex flex-row justify-center mt-8">
+		
+					<form onSubmit={handleSubmit}>
+					  <div class="right-inner-addon input-container">
+						<i class="fa fa-password"></i>
+						<input
+						type="text"
+						id="email-input"
+						class="form-control"
+						placeholder="Enter your Email"
+					  />
+					   
+		
+					  </div>
+					  <div class="right-inner-addon input-container">
+						<i class="fa fa-search"></i>
+						<input
+						class="form-control"
+						type="password"
+						id="password-input"
+						 
+						placeholder="Enter your Password"
+					  />
+						 
+		
+						 
+		
+		
+					  </div>
+					  <br></br>
+					  <button  class="btn-submit w-full py-2 px-4 rounded-md bg-blue-500 text-white font-bold text-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 cursor-pointer" onClick={handleSubmit} type="submit">Sign In</button>
+					  <br></br>
+					  <a href="#" className="submit">Forgot Password?</a>
+					</form>
+				  </div>
+		
+				</div>
+				<div className="empty-div">
+		
+				</div>
+			  </div>
+		</div>
 		<!-- home page -->
 		<div id="home-page">home page</div>
 		<!-- recent orders -->
@@ -244,9 +297,7 @@
 		integrity="sha256-9yRP/2EFlblE92vzCA10469Ctd0jT48HnmmMw5rJZrA=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/dist/jquery-ui.min.js"
 		integrity="sha256-sw0iNNXmOJbQhYFuC9OF2kOlD5KQKe1y5lfBn4C9Sjg=" crossorigin="anonymous"></script>
-
-
-
+		
 	<script type="module" src="js/app.js"></script>
 </body>
 
