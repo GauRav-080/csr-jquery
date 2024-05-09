@@ -84,7 +84,9 @@
 /* Recent-Order Page Css Start Here */
 
 .ui-accordion .ui-accordion-header {
-	margin: -14px 8px 48px 17px;
+  margin: -14px 8px 48px 17px;
+  background-color: #2a58ad;
+  color: white;
 }
 
 .ui-accordion .ui-accordion-content {
