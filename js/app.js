@@ -7,3 +7,8 @@ $(window).on("load", function () {
 	//$("#logout-btn").on("click", onLogout);
 	//addMenuEvent();
 });
+$( function() {
+	$( "#accordion" ).accordion({
+		collapsible: true
+	});
+} );
