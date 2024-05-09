@@ -1,42 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" />
-		<link rel="stylesheet" href="https://cdn.datatables.net/2.0.6/css/dataTables.dataTables.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
-			integrity="sha256-zaSoHBhwFdle0scfGEFUCwggPN7F+ip9XRglo8IWb4w=" crossorigin="anonymous" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/themes/base/tabs.min.css" />
-		<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css" />
-		<link rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.datatables.net/2.0.6/css/dataTables.dataTables.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+			integrity="sha256-zaSoHBhwFdle0scfGEFUCwggPN7F+ip9XRglo8IWb4w="
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/themes/base/tabs.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+		/>
 		<link href="./css/app.css" rel="stylesheet" />
 		<title>CSR</title>
 	</head>
-
 	<body class="bg-gray-200">
 		<div class="bg-white max-w-screen-3xl mx-auto">
-			<header class="bg-inherit sticky top-0 z-40 border-b-2 flex flex-row justify-center items-center px-5 py-2">
-				<img class="h-7" src="./assets/images/header-logo.png" alt="Select Header Logo" />
+			<div
+				id="loading-page"
+				class="fixed z-[100] h-screen w-full bg-white hidden"
+			></div>
+			<header
+				id="main-header"
+				class="bg-inherit sticky top-0 z-40 border-b-2 flex flex-row justify-center items-center px-5 py-2"
+			>
+				<img
+					class="h-7"
+					src="./assets/images/header-logo.png"
+					alt="Select Header Logo"
+				/>
 				<h1 class="font-medium text-base text-chead-black mx-auto">
 					SHERIDAN GLOBAL GATEWAY SYSTEM - CSR INTERFACE
 				</h1>
-				<div class="text-[#1a1a1a] font-normal text-sm flex flex-row items-center gap-2">
+				<div
+					class="text-[#1a1a1a] font-normal text-sm flex flex-row items-center gap-2"
+				>
 					<div id="profile" class="flex flex-row items-center gap-1">
 						<h2 class="w-7 h-7 rounded-full bg-gray-400"></h2>
 						<h2>Nawyn Dsouza</h2>
 					</div>
 					|
-					<button>Sign Out</button>
+					<a href="#/login">Sign Out</a>
 				</div>
 			</header>
 			<div id="main" class="flex flex-row">
-				<div id="sidebar" class="fixed z-10 bg-cdark-blue h-full overflow-auto pb-24">
+				<div
+					id="sidebar-nav"
+					class="fixed z-10 bg-cdark-blue h-full overflow-y-auto min-w-[13.5rem] pb-24"
+				>
 					<nav>
 						<ul class="text-white font-medium text-sm">
 							<li>
@@ -123,23 +154,26 @@
 						</ul>
 					</nav>
 				</div>
-
-				<div id="page-content" class="w-full pl-52">
+				<div id="b-sidebar" class="min-w-[13.5rem]"></div>
+				<div id="page-content" class="w-full">
 					<!-- Load pages here -->
 				</div>
 			</div>
 
 			<footer
-				class="fixed z-40 bottom-0 bg-inherit border-t-2 w-full max-w-screen-3xl text-center py-1 text-xs text-gray-400">
+				class="fixed z-50 bottom-0 bg-inherit border-t-2 w-full max-w-screen-3xl text-center py-1 text-xs text-gray-400"
+			>
 				Copyright &copy; Sheridan Digital Express. All right reserved.
 			</footer>
 		</div>
 
 		<div id="page-structures" class="hidden">
 			<!-- login page -->
-			<div id="login-page">
-				<div class="bg-cover bg-center h-screen flex justify-center items-center"
-					style="background-image: url('../assets/images/login-background.png')">
+			<div id="login-page" class="fixed z-50 w-full h-screen top-0 left-0">
+				<div
+					class="bg-cover bg-center h-screen flex justify-center items-center"
+					style="background-image: url('../assets/images/login-background.png')"
+				>
 					<div class="left-side w-1/2 p-2 flex flex-col">
 						<h2 class="flex-1 px-5 text-5xl text-white font-thin mb-0">
 							SHERIDAN GLOBAL GATEWAY SYSTEM -
@@ -149,9 +183,14 @@
 						</p>
 					</div>
 					<div class="flex-1 w-1/2 p-2 flex flex-col">
-						<div class="sign-in p-5 bg-white h-screen mr-16 flex flex-col justify-center">
+						<div
+							class="sign-in p-5 bg-white h-screen mr-16 flex flex-col justify-center"
+						>
 							<div class="logo flex flex-col items-center">
-								<img className="img-logo" src="../assets/images/header-logo.png" />
+								<img
+									className="img-logo"
+									src="../assets/images/header-logo.png"
+								/>
 								<h2 class="text-gray-600 font-normal">Sign In</h2>
 							</div>
 
@@ -159,16 +198,28 @@
 								<form onSubmit="{handleSubmit}">
 									<div class="right-inner-addon input-container">
 										<i class="fa fa-password"></i>
-										<input type="text" id="email-input" class="form-control" placeholder="Enter your Email" />
+										<input
+											type="text"
+											id="email-input"
+											class="form-control"
+											placeholder="Enter your Email"
+										/>
 									</div>
 									<div class="right-inner-addon input-container">
 										<i class="fa fa-search"></i>
-										<input class="form-control" type="password" id="password-input" placeholder="Enter your Password" />
+										<input
+											class="form-control"
+											type="password"
+											id="password-input"
+											placeholder="Enter your Password"
+										/>
 									</div>
 									<br />
 									<button
 										class="btn-submit w-full py-2 px-4 rounded-md bg-blue-500 text-white font-bold text-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 cursor-pointer"
-										onClick="{handleSubmit}" type="submit">
+										onClick="{handleSubmit}"
+										type="submit"
+									>
 										Sign In
 									</button>
 									<br />
@@ -182,41 +233,53 @@
 			</div>
 			<!-- home page -->
 			<div id="home-page">
-				<div class="home-container bg-gray-200 h-full w-full box-border overflow-auto">
-					<div className='page-detail'>
-						<h3>
-							Home
-						</h3>
+				<div
+					class="home-container bg-gray-200 h-full w-full box-border overflow-auto"
+				>
+					<div className="page-detail">
+						<h3>Home</h3>
 					</div>
 				</div>
 				<div
-					class="welcome-banner mt-10 mx-5 mb-5 h-16 bg-gradient-to-r from-blue-500 to-green-500 flex items-center rounded-md">
+					class="welcome-banner mt-10 mx-5 mb-5 h-16 bg-gradient-to-r from-blue-500 to-green-500 flex items-center rounded-md"
+				>
 					<!-- <img class="h-60 mx-4" src='../assets/images/profile-icon.png'  /> -->
 					<h4 class="text-white text-base font-normal">
-						Welcome <span class="text-white text-base font-bold">Nawyn Dsouza</span>. You are Logged in as
-						<span>Adminnistrator</span>.
+						Welcome
+						<span class="text-white text-base font-bold">Nawyn Dsouza</span>.
+						You are Logged in as <span>Adminnistrator</span>.
 					</h4>
-
 				</div>
 
 				<div id="accordion">
 					<h3>Section 1</h3>
 					<div>
-						<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus,
-							molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin
-							viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+						<p>
+							Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam.
+							Integer ut neque. Vivamus nisi metus, molestie vel, gravida in,
+							condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam
+							mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a
+							velit eu ante scelerisque vulputate.
+						</p>
 					</div>
 					<h3>Section 2</h3>
 					<div>
-						<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at
-							aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non
-							quam. In suscipit faucibus urna. </p>
+						<p>
+							Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit
+							amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+							turpis porttitor velit, faucibus interdum tellus libero ac justo.
+							Vivamus non quam. In suscipit faucibus urna.
+						</p>
 					</div>
 					<h3>Section 3</h3>
 					<div>
-						<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus
-							in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo,
-							magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
+						<p>
+							Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque
+							lobortis. Phasellus pellentesque purus in massa. Aenean in pede.
+							Phasellus ac libero ac tellus pellentesque semper. Sed ac felis.
+							Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu
+							iaculis leo purus venenatis dui.
+						</p>
 						<ul>
 							<li>List item one</li>
 							<li>List item two</li>
@@ -225,11 +288,17 @@
 					</div>
 					<h3>Section 4</h3>
 					<div>
-						<p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-							egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean
-							lacinia mauris vel est. </p>
-						<p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu
-							ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+						<p>
+							Cras dictum. Pellentesque habitant morbi tristique senectus et
+							netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum
+							primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+							Aenean lacinia mauris vel est.
+						</p>
+						<p>
+							Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat
+							lectus. Class aptent taciti sociosqu ad litora torquent per
+							conubia nostra, per inceptos himenaeos.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -239,7 +308,6 @@
 					<div class="bg-white h-13 border-white m-0 p-1">
 						<h3 class="text-xl font-normal m-3 text-cblue">Recent Orders</h3>
 					</div>
-
 					<div id="accordion">
 						<h3 class="accordion-icon">Search Grid</h3>
 
@@ -247,13 +315,23 @@
 							<div class="flex flex-row justify-start mt-1 mb-8">
 								<div class="flex flex-col mx-1 w-60">
 									<label class="text-label">From:</label>
-									<input type="text" id="order_toDate" placeholder="MM/DD/YYYY" class="ms_date_text"
-										autocomplete="off" />
+									<input
+										type="text"
+										id="order_toDate"
+										placeholder="MM/DD/YYYY"
+										class="ms_date_text"
+										autocomplete="off"
+									/>
 								</div>
 								<div class="flex flex-col mx-1 w-60">
 									<label class="text-label">To:</label>
-									<input type="text" id="order_endDate" placeholder="MM/DD/YYYY" class="ms_date_text"
-										autocomplete="off" />
+									<input
+										type="text"
+										id="order_endDate"
+										placeholder="MM/DD/YYYY"
+										class="ms_date_text"
+										autocomplete="off"
+									/>
 								</div>
 							</div>
 
@@ -420,13 +498,21 @@
 		</div>
 
 		<script src="js/lib/jquery-3.7.1.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/datatables.net@2.0.6/js/dataTables.min.js"
-			integrity="sha256-8ODK/e90HB+c5xOpglHIiTwP0PdDp79mogAMWIYLud4=" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"
-			integrity="sha256-9yRP/2EFlblE92vzCA10469Ctd0jT48HnmmMw5rJZrA=" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/dist/jquery-ui.min.js"
-			integrity="sha256-sw0iNNXmOJbQhYFuC9OF2kOlD5KQKe1y5lfBn4C9Sjg=" crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/datatables.net@2.0.6/js/dataTables.min.js"
+			integrity="sha256-8ODK/e90HB+c5xOpglHIiTwP0PdDp79mogAMWIYLud4="
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"
+			integrity="sha256-9yRP/2EFlblE92vzCA10469Ctd0jT48HnmmMw5rJZrA="
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/dist/jquery-ui.min.js"
+			integrity="sha256-sw0iNNXmOJbQhYFuC9OF2kOlD5KQKe1y5lfBn4C9Sjg="
+			crossorigin="anonymous"
+		></script>
 		<script type="module" src="js/app.js"></script>
 	</body>
-
 </html>
