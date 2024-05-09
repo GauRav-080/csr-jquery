@@ -36,7 +36,12 @@
 	</head>
 	<body class="bg-gray-200">
 		<div class="bg-white max-w-screen-3xl mx-auto">
+			<div
+				id="loading-page"
+				class="fixed z-[100] h-screen w-full bg-white hidden"
+			></div>
 			<header
+				id="main-header"
 				class="bg-inherit sticky top-0 z-40 border-b-2 flex flex-row justify-center items-center px-5 py-2"
 			>
 				<img
@@ -55,13 +60,13 @@
 						<h2>Nawyn Dsouza</h2>
 					</div>
 					|
-					<button>Sign Out</button>
+					<a href="#/login">Sign Out</a>
 				</div>
 			</header>
 			<div id="main" class="flex flex-row">
 				<div
-					id="sidebar"
-					class="fixed z-10 bg-cdark-blue h-full overflow-auto pb-24"
+					id="sidebar-nav"
+					class="fixed z-10 bg-cdark-blue h-full overflow-y-auto min-w-[13.5rem] pb-24"
 				>
 					<nav>
 						<ul class="text-white font-medium text-sm">
@@ -149,14 +154,14 @@
 						</ul>
 					</nav>
 				</div>
-
-				<div id="page-content" class="w-full pl-52">
+				<div id="b-sidebar" class="min-w-[13.5rem]"></div>
+				<div id="page-content" class="w-full">
 					<!-- Load pages here -->
 				</div>
 			</div>
 
 			<footer
-				class="fixed z-40 bottom-0 bg-inherit border-t-2 w-full max-w-screen-3xl text-center py-1 text-xs text-gray-400"
+				class="fixed z-50 bottom-0 bg-inherit border-t-2 w-full max-w-screen-3xl text-center py-1 text-xs text-gray-400"
 			>
 				Copyright &copy; Sheridan Digital Express. All right reserved.
 			</footer>
@@ -164,7 +169,7 @@
 
 		<div id="page-structures" class="hidden">
 			<!-- login page -->
-			<div id="login-page">
+			<div id="login-page" class="fixed z-50 w-full h-screen top-0 left-0">
 				<div
 					class="bg-cover bg-center h-screen flex justify-center items-center"
 					style="background-image: url('../assets/images/login-background.png')"
@@ -228,44 +233,74 @@
 			</div>
 			<!-- home page -->
 			<div id="home-page">
-				<div  class="home-container bg-gray-200 h-full w-full box-border overflow-auto">
-							<div className='page-detail'>
-									<h3>
-											Home
-									</h3>
-							</div>
-			</div>
-							<div class="welcome-banner mt-10 mx-5 mb-5 h-16 bg-gradient-to-r from-blue-500 to-green-500 flex items-center rounded-md">
-									<!-- <img class="h-60 mx-4" src='../assets/images/profile-icon.png'  /> -->
-									<h4 class="text-white text-base font-normal">
-											Welcome <span class="text-white text-base font-bold">Nawyn Dsouza</span>. You are Logged in as <span>Adminnistrator</span>.
-									</h4>
-	
-							</div>
-				
-					<div id="accordion">
-						<h3>Section 1</h3>
-						<div>
-							<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
-						</div>
-						<h3>Section 2</h3>
-						<div>
-							<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
-						</div>
-						<h3>Section 3</h3>
-						<div>
-							<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
-							<ul>
+				<div
+					class="home-container bg-gray-200 h-full w-full box-border overflow-auto"
+				>
+					<div className="page-detail">
+						<h3>Home</h3>
+					</div>
+				</div>
+				<div
+					class="welcome-banner mt-10 mx-5 mb-5 h-16 bg-gradient-to-r from-blue-500 to-green-500 flex items-center rounded-md"
+				>
+					<!-- <img class="h-60 mx-4" src='../assets/images/profile-icon.png'  /> -->
+					<h4 class="text-white text-base font-normal">
+						Welcome
+						<span class="text-white text-base font-bold">Nawyn Dsouza</span>.
+						You are Logged in as <span>Adminnistrator</span>.
+					</h4>
+				</div>
+
+				<div id="accordion">
+					<h3>Section 1</h3>
+					<div>
+						<p>
+							Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam.
+							Integer ut neque. Vivamus nisi metus, molestie vel, gravida in,
+							condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam
+							mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a
+							velit eu ante scelerisque vulputate.
+						</p>
+					</div>
+					<h3>Section 2</h3>
+					<div>
+						<p>
+							Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit
+							amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris
+							turpis porttitor velit, faucibus interdum tellus libero ac justo.
+							Vivamus non quam. In suscipit faucibus urna.
+						</p>
+					</div>
+					<h3>Section 3</h3>
+					<div>
+						<p>
+							Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque
+							lobortis. Phasellus pellentesque purus in massa. Aenean in pede.
+							Phasellus ac libero ac tellus pellentesque semper. Sed ac felis.
+							Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu
+							iaculis leo purus venenatis dui.
+						</p>
+						<ul>
 							<li>List item one</li>
 							<li>List item two</li>
 							<li>List item three</li>
-							</ul>
-						</div>
-						<h3>Section 4</h3>
-						<div>
-							<p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est. </p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-						</div>
-						</div>
+						</ul>
+					</div>
+					<h3>Section 4</h3>
+					<div>
+						<p>
+							Cras dictum. Pellentesque habitant morbi tristique senectus et
+							netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum
+							primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+							Aenean lacinia mauris vel est.
+						</p>
+						<p>
+							Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat
+							lectus. Class aptent taciti sociosqu ad litora torquent per
+							conubia nostra, per inceptos himenaeos.
+						</p>
+					</div>
+				</div>
 			</div>
 			<!-- recent orders -->
 			<div id="recent-orders-page">

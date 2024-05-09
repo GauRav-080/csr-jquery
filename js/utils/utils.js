@@ -36,6 +36,14 @@ export function onLogout() {
 	navigatePage("login");
 }
 
+export function pageLoading(flag) {
+	if (flag) {
+		$("#loading-page").removeClass("hidden");
+	} else {
+		$("#loading-page").addClass("hidden");
+	}
+}
+
 export function downloadCSV(p_oData, p_sFilename) {
 	const blob = new Blob([p_oData], { type: "text/csv" });
 
