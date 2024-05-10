@@ -104,6 +104,8 @@
 
 .ui-accordion .ui-accordion-header {
 	margin: -14px 8px 48px 17px;
+	background-color: #2a58ad;
+	color: white;
 }
 
 .ui-accordion .ui-accordion-content {
@@ -152,6 +154,12 @@ table.dataTable td.dt-type-date {
 	text-align: left;
 }
 
+.table-body > tr > td {
+	font-size: 14px;
+	color: #707070;
+	font-weight: bold;
+}
+
 .input-section {
 	background-color: rgb(255, 255, 255);
 	margin: 20px 10px 25px 15px;
@@ -168,3 +176,11 @@ table.dataTable td.dt-type-date {
 /*  Login Page Css start Here */
 
 /*  Login Page Css End Here */
+.column-search {
+	width: 100%;
+}
+
+table.dataTable tbody td:first-of-type {
+	text-decoration: underline;
+	color: #279be4;
+}
