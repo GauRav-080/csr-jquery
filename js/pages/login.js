@@ -1,8 +1,10 @@
 import { storageService } from "../utils/config.js";
+import { navigatePage } from "../utils/utils.js";
 
 export var login = {
 	init: function () {
 		storageService.init();
+		$("#sign-in-btn").on("click", this.lgBttn);
 		// this._enableDisableSubmit = this.enableDisableSubmit.bind(this);
 		// this._onEmailChange = this.onEmailChange.bind(this);
 		// this._onPasswordChange = this.onPasswordChange.bind(this);
@@ -32,6 +34,10 @@ export var login = {
 		// 	$("#sign-in-btn").off("click", this._handleEvents);
 		// }
 	},
+	lgBttn: () => {
+		storageService.setData("isAuth", true);
+		navigatePage("home");
+	},
 	onSuccess: function (p_sMsg) {
 		/* $.toast({
           autoDismiss: true,
@@ -39,7 +45,7 @@ export var login = {
           message: p_sMsg
       }); */
 		storageService.setData("isAuth", true);
-		navigatePage("summary");
+		navigatePage("home");
 	},
 	handleEvents: function (e) {
 		// var userValue = $("#formEmail").val(),
@@ -94,6 +100,7 @@ export var login = {
 		this.destroy();
 	},
 	destroy: function () {
+		$("#sign-in-btn").off("click", this.lgBttn);
 		// $('#sign-in-btn').off('click', this._handleEvents);
 		// $("#formEmail").off("change paste keyup", this._onEmailChange);
 		// $('#formPassword').off('change paste keyup', this._onPasswordChange);
