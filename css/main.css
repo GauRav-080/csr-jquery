@@ -162,3 +162,12 @@ table.dataTable td.dt-type-date {
 	padding-left: 7px;
 }
 /*  Login Page Css End Here */
+.column-search{
+  width: 100%;
+}
+
+table.dataTable  tbody  td:first-of-type {  
+ text-decoration: underline;
+ color: #279be4;
+}
+
