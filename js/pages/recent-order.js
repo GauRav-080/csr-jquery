@@ -42,10 +42,12 @@ export var recent_orders = {
             data: aJouralTemp,
         });
         $("#order_toDate").datepicker({
+            maxDate: new Date(),
             changeMonth: true,
             changeYear: true
         });
         $("#order_endDate").datepicker({
+            maxDate: new Date(),
             changeMonth: true,
             changeYear: true
         });
@@ -54,7 +56,62 @@ export var recent_orders = {
             collapsible: true
         });
 
-        $(`#dataTables`).DataTable();
+        var table = $('#dataTables').DataTable({
+            colReorder: true,
+            ordering: true,
+            // orderCellsTop: true,
+             fixedHeader: true,
+
+            lengthMenu: [
+                [5, 10, 25, 50, 100, -1],
+                [5, 10, 25, 50, 100, 'All']
+            ],
+            layout: {
+                topStart: {
+
+                    buttons: [
+                        {
+                            text: 'Hide Filter',
+                            class: 'filter-btn',
+                            action: function (e, dt, node, config) {
+                                var button = this; // Reference to the button
+
+                                $('#dataTables thead tr:eq(1) th').toggle();
+
+                                if (button.text().trim() === 'Filter') {
+                                    button.text('Hide Filter');
+                                } else {
+                                    button.text('                                                                                                                                                                                                           Filter');
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        });
+
+
+     
+        $('#dataTables thead tr').appendTo('#dataTables thead');
+        $('#dataTables thead tr:eq(1) th').each(function (i) {
+            var title = $(this).text();
+            $(this).html('<input type="text" class="column-search" placeholder="Search ' + title + '" />');
+
+            $('input', this).on('keyup change', function () {
+                if (table.column(i).search() !== this.value) {
+                    table
+                        .column(i)
+                        .search(this.value)
+                        .draw();
+                }
+            });
+        });
+
+
+
+
+
+
     },
 
 
