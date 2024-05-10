@@ -12,18 +12,38 @@
 @layer components {
 	/* sidebar start*/
 
-	#sidebar-nav a {
-		@apply flex flex-row items-center gap-2 pl-5 pr-6 cursor-pointer;
+	.nav-a {
+		@apply flex relative items-center gap-2 pl-5 pr-6 cursor-pointer;
+		& span {
+			@apply text-gray-400;
+		}
 	}
-	#sidebar-nav a h3 {
+	.nav-a h3 {
 		@apply pt-3 pb-2 w-full border-b border-gray-500;
 	}
-	#sidebar-nav a span {
-		@apply text-gray-400;
-	}
-	#sidebar-nav #sub-orders a {
+
+	.sub-nav-a {
 		@apply pl-16;
 	}
+	.nav-a-selected {
+		@apply after:absolute after:p-4 after:bg-cblue;
+	}
+	/* sidebar end */
+}
+
+@layer utilities {
+	/* sidebar start */
+	.nav-a:hover {
+		@apply bg-cblue after:bg-cblue;
+
+		& h3 {
+			@apply border-transparent;
+		}
+		& span {
+			@apply text-white;
+		}
+	}
+
 	/* sidebar end */
 }
 
@@ -31,6 +51,7 @@
 /* width */
 ::-webkit-scrollbar {
 	width: 7px;
+	height: 7px;
 }
 
 /* Track */
@@ -145,12 +166,5 @@ table.dataTable td.dt-type-date {
 /* Recent-Order Page Css End Here */
 
 /*  Login Page Css start Here */
-.form-control {
-	background-color: #f5f5f5;
-	border: none;
-	border-bottom: 1px solid #aaa;
-	border-radius: 0px;
-	height: 50px;
-	padding-left: 7px;
-}
+
 /*  Login Page Css End Here */

@@ -42,7 +42,7 @@
 			></div>
 			<header
 				id="main-header"
-				class="bg-inherit sticky top-0 z-40 border-b-2 flex flex-row justify-center items-center px-5 py-2"
+				class="bg-inherit sticky top-0 z-40 w-full border-b-2 flex justify-center items-center px-5 py-2"
 			>
 				<img
 					class="h-7"
@@ -52,41 +52,39 @@
 				<h1 class="font-medium text-base text-chead-black mx-auto">
 					SHERIDAN GLOBAL GATEWAY SYSTEM - CSR INTERFACE
 				</h1>
-				<div
-					class="text-[#1a1a1a] font-normal text-sm flex flex-row items-center gap-2"
-				>
-					<div id="profile" class="flex flex-row items-center gap-1">
-						<h2 class="w-7 h-7 rounded-full bg-gray-400"></h2>
+				<div class="text-[#1a1a1a] font-normal text-sm flex items-center gap-2">
+					<div id="profile" class="flex items-center gap-1">
+						<h2 class="size-7 rounded-full bg-gray-400"></h2>
 						<h2>Nawyn Dsouza</h2>
 					</div>
 					|
-					<a href="#/login">Sign Out</a>
+					<button id="logout-btn">Sign Out</button>
 				</div>
 			</header>
-			<div id="main" class="flex flex-row">
+			<div id="main" class="flex w-full">
 				<div
 					id="sidebar-nav"
-					class="fixed z-10 bg-cdark-blue h-full overflow-y-auto min-w-[13.5rem] pb-24"
+					class="fixed z-10 bg-cdark-blue h-full overflow-y-auto min-w-[13.5rem] pb-20"
 				>
 					<nav>
 						<ul class="text-white font-medium text-sm">
 							<li>
-								<a href="#/home">
+								<a href="#/home" class="nav-a">
 									<span class="material-symbols-outlined"> home </span>
 									<h3>Home</h3>
 								</a>
 							</li>
 
 							<li>
-								<a href="">
+								<a href="" class="nav-a">
 									<span class="material-symbols-outlined"> notifications </span>
-									<h3>Notifications</h3>
+									<h3 class="a-h3">Notifications</h3>
 								</a>
 							</li>
 							<li>
-								<a>
+								<a class="nav-a">
 									<span class="material-symbols-outlined"> assignment </span>
-									<h3 class="flex flex-row">
+									<h3 class="flex">
 										Orders
 										<span class="material-symbols-outlined ml-auto">
 											expand_less
@@ -95,26 +93,26 @@
 								</a>
 								<ul id="sub-orders" class="text-gray-300">
 									<li>
-										<a href="#/recent-orders">
+										<a href="#/recent-orders" class="nav-a sub-nav-a">
 											<h3>Recent Orders</h3>
 										</a>
-										<a>
+										<a class="nav-a sub-nav-a">
 											<h3>On Wait Orders</h3>
 										</a>
-										<a>
+										<a class="nav-a sub-nav-a">
 											<h3>Failed Orders</h3>
 										</a>
-										<a>
+										<a class="nav-a sub-nav-a">
 											<h3>In Process Orders</h3>
 										</a>
-										<a>
+										<a class="nav-a sub-nav-a">
 											<h3>Search Orders</h3>
 										</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-								<a href="">
+								<a href="" class="nav-a">
 									<span class="material-symbols-outlined">
 										manage_accounts
 									</span>
@@ -122,31 +120,31 @@
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="" class="nav-a">
 									<span class="material-symbols-outlined"> deployed_code </span>
 									<h3>Products</h3>
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="" class="nav-a">
 									<span class="material-symbols-outlined"> hub </span>
 									<h3>Distributions</h3>
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="" class="nav-a">
 									<span class="material-symbols-outlined"> receipt_long </span>
 									<h3>Transactions</h3>
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="" class="nav-a">
 									<span class="material-symbols-outlined"> description </span>
 									<h3>SDS</h3>
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="" class="nav-a">
 									<span class="material-symbols-outlined"> build </span>
 									<h3>Admin Tools</h3>
 								</a>
@@ -171,63 +169,58 @@
 			<!-- login page -->
 			<div id="login-page" class="fixed z-50 w-full h-screen top-0 left-0">
 				<div
-					class="bg-cover bg-center h-screen flex justify-center items-center"
-					style="background-image: url('../assets/images/login-background.png')"
+					class="bg-[url('../assets/images/login-background.png')] bg-cover bg-center flex justify-center items-center px-36"
 				>
-					<div class="left-side w-1/2 p-2 flex flex-col">
-						<h2 class="flex-1 px-5 text-5xl text-white font-thin mb-0">
-							SHERIDAN GLOBAL GATEWAY SYSTEM -
-						</h2>
-						<p class="px-5 text-5xl text-white font-medium mt-0">
-							CSR INTERFACE
-						</p>
+					<div class="w-1/2 flex flex-col text-white">
+						<h1 class="text-[53px] leading-tight font-thin">
+							SHERIDAN GLOBAL GATEWAY SYSTEM
+						</h1>
+						<h1 class="text-[62px] font-medium">
+							<span class="font-thin">-</span> CSR
+						</h1>
 					</div>
-					<div class="flex-1 w-1/2 p-2 flex flex-col">
-						<div
-							class="sign-in p-5 bg-white h-screen mr-16 flex flex-col justify-center"
-						>
-							<div class="logo flex flex-col items-center">
-								<img
-									className="img-logo"
-									src="../assets/images/header-logo.png"
-								/>
-								<h2 class="text-gray-600 font-normal">Sign In</h2>
-							</div>
+					<div
+						class="w-1/2 flex flex-col justify-center items-center h-screen bg-white gap-10"
+					>
+						<img class="h-20" src="../assets/images/header-logo.png" />
 
-							<div class="input-handle flex flex-row justify-center mt-8">
-								<form onSubmit="{handleSubmit}">
-									<div class="right-inner-addon input-container">
-										<i class="fa fa-password"></i>
-										<input
-											type="text"
-											id="email-input"
-											class="form-control"
-											placeholder="Enter your Email"
-										/>
-									</div>
-									<div class="right-inner-addon input-container">
-										<i class="fa fa-search"></i>
-										<input
-											class="form-control"
-											type="password"
-											id="password-input"
-											placeholder="Enter your Password"
-										/>
-									</div>
-									<br />
-									<button
-										class="btn-submit w-full py-2 px-4 rounded-md bg-blue-500 text-white font-bold text-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 cursor-pointer"
-										onClick="{handleSubmit}"
-										type="submit"
-									>
-										Sign In
-									</button>
-									<br />
-									<a href="#" className="submit">Forgot Password?</a>
-								</form>
+						<div class="flex flex-col items-center justify-center gap-5 w-1/2">
+							<h2 class="text-[#8b8b8b] text-2xl font-normal">Sign In</h2>
+							<div
+								class="bg-gray-100 border-b-2 border-gray-400 w-full h-12 py-2 px-3 text-base flex justify-center items-center gap-2"
+							>
+								<input
+									type="email"
+									id="email-input"
+									class="bg-transparent w-full focus-within:outline-none"
+									placeholder="Enter your email*"
+									required
+								/>
+								<span class="material-symbols-outlined"> mail </span>
 							</div>
+							<div
+								class="bg-gray-100 border-b-2 border-gray-400 w-full h-12 py-2 px-3 text-base flex justify-center items-center gap-2"
+							>
+								<input
+									class="bg-transparent w-full focus-within:outline-none"
+									type="password"
+									id="password-input"
+									placeholder="Enter your password"
+									required
+								/>
+								<span class="material-symbols-outlined"> lock </span>
+							</div>
+							<button
+								id="sign-in-btn"
+								class="w-full py-2 rounded-sm bg-cblue text-white font-bold text-base focus:ring-2 focus:ring-blue-200 cursor-pointer"
+							>
+								Sign In
+							</button>
+							<a
+								class="underline cursor-pointer text-[#2a58ad] text-base font-medium"
+								>Forgot Password?</a
+							>
 						</div>
-						<div className="empty-div"></div>
 					</div>
 				</div>
 			</div>
